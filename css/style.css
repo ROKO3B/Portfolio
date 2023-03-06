@@ -34,9 +34,9 @@ li {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: #fffaf4;
+  background-color: #fffaf4 255, 255, 255, 0.7;
 }
-#header .inner {
+#header .wrapper {
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
@@ -53,4 +53,28 @@ li {
 #header .navi-menu li:hover {
   color: #fcaf45;
   transition: 0.5s;
+}
+
+.mainVisual {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#works .sec-title {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 40px;
+  color: #cc7917;
+  border-bottom: solid 3px #dfccbb;
+}
+#works .sec-title .works-list img {
+  width: 560px;
+  height: 300px;
 }/*# sourceMappingURL=style.css.map */
