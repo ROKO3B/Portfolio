@@ -93,20 +93,116 @@ li {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     object-fit: contain;
-    gap: 50px;
+    row-gap: 80px;
+    column-gap: 50px;
   }
   .works-item {
     img {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
-    p {
-      font-size: 16px;
-    }
-    .img-title {
+    
+    .works-title {
       font-size: 18px;
       font-weight: bold;
+      margin-bottom: 14px;
     }
   }
+  .works-content {
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-left: 30px;
+    }
+
+    li {
+      background: #cc7917;
+      color: #fffaf4;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px 16px;
+      margin: 0 10px 10px 0;
+      border-radius: 10px;
+    }
+  }
+}
+
+.toggle-btn {
+  display: none;
+  position: fixed;
+  top: 25px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 20;
+
+  span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #cc7917;
+    border-radius: 4px;
+    transition: all .5s;
+
+    &:nth-child(1) {
+      top: 4px;
+    }
+    &:nth-child(2) {
+      top: 14px;
+    }
+    &:nth-child(3) {
+      bottom: 4px;
+    }
+  }
+  .open {
+    .toggle-btn {
+      span {
+        background-color: #cc7917;
+
+        &:nth-child(1) {
+          -webkit-transform: translateY(10px) rotate(-315deg);
+          transform: translateY(10px) rotate(-315deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          -webkit-transform: translateY(-10px) rotate(315deg);
+          transform: translateY(-10px) rotate(315deg);
+        }
+      }
+    }
+  }  
+}
+
+#mask {
+  display: none;
+  transition: all .5s;
+}
+
+.open {
+  #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #cc7917;
+    opacity: .8;
+    z-index: 10;
+    cursor: pointer;
+  }
+}
+
+.hamburger {
+  display: none;
 }
 
 .footer {
