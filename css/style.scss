@@ -53,6 +53,71 @@ li {
       transition: 0.5s;
     }
   }
+
+  .sp-nav-menu {
+    width: 70%;
+    height: 100vh;
+    margin-left: auto;
+    display: flex;
+    flex-direction: clumn;
+    color: #fffaf4;
+    background-color: #FCAF45;
+    transition: .4s;
+
+    .menu-list {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .sp-nav-menu {
+    position: fixed;
+    right: -70%;
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fffaf4;
+    background-color: rgba(167, 148, 58, 0.7);
+    transition: .4s;
+  }
+
+  .btn {
+    position: fixed;
+    top: 32px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+  
+    .btn-line {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 3px;
+        background-color: #fffaf4;
+        transition: .2s;
+  
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fffaf4;
+        transition: .5s;
+      }
+      &::before {
+        transform: translateY(-16px);
+      }
+      &::after {
+        transform: translateY(16px);
+      }
+    }
+  }
 }
 
 .mainVisual {
@@ -129,81 +194,7 @@ li {
   }
 }
 
-.toggle-btn {
-  display: none;
-  position: fixed;
-  top: 25px;
-  right: 45px;
-  width: 30px;
-  height: 30px;
-  transition: all .5s;
-  cursor: pointer;
-  z-index: 20;
 
-  span {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background-color: #cc7917;
-    border-radius: 4px;
-    transition: all .5s;
-
-    &:nth-child(1) {
-      top: 4px;
-    }
-    &:nth-child(2) {
-      top: 14px;
-    }
-    &:nth-child(3) {
-      bottom: 4px;
-    }
-  }
-  .open {
-    .toggle-btn {
-      span {
-        background-color: #cc7917;
-
-        &:nth-child(1) {
-          -webkit-transform: translateY(10px) rotate(-315deg);
-          transform: translateY(10px) rotate(-315deg);
-        }
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(3) {
-          -webkit-transform: translateY(-10px) rotate(315deg);
-          transform: translateY(-10px) rotate(315deg);
-        }
-      }
-    }
-  }  
-}
-
-#mask {
-  display: none;
-  transition: all .5s;
-}
-
-.open {
-  #mask {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #cc7917;
-    opacity: .8;
-    z-index: 10;
-    cursor: pointer;
-  }
-}
-
-.hamburger {
-  display: none;
-}
 
 .footer {
   width: 100%;

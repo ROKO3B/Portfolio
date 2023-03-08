@@ -56,6 +56,64 @@ li {
   color: #fcaf45;
   transition: 0.5s;
 }
+#header .sp-nav-menu {
+  width: 70%;
+  height: 100vh;
+  margin-left: auto;
+  display: flex;
+  flex-direction: clumn;
+  color: #fffaf4;
+  background-color: #FCAF45;
+  transition: 0.4s;
+}
+#header .sp-nav-menu .menu-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .sp-nav-menu {
+  position: fixed;
+  right: -70%;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fffaf4;
+  background-color: rgba(167, 148, 58, 0.7);
+  transition: 0.4s;
+}
+#header .btn {
+  position: fixed;
+  top: 32px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+}
+#header .btn .btn-line {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #fffaf4;
+  transition: 0.2s;
+}
+#header .btn .btn-line::before, #header .btn .btn-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fffaf4;
+  transition: 0.5s;
+}
+#header .btn .btn-line::before {
+  transform: translateY(-16px);
+}
+#header .btn .btn-line::after {
+  transform: translateY(16px);
+}
 
 .mainVisual img {
   width: 100vw;
@@ -122,71 +180,6 @@ li {
   padding: 8px 16px;
   margin: 0 10px 10px 0;
   border-radius: 10px;
-}
-
-.toggle-btn {
-  display: none;
-  position: fixed;
-  top: 25px;
-  right: 45px;
-  width: 30px;
-  height: 30px;
-  transition: all 0.5s;
-  cursor: pointer;
-  z-index: 20;
-}
-.toggle-btn span {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background-color: #cc7917;
-  border-radius: 4px;
-  transition: all 0.5s;
-}
-.toggle-btn span:nth-child(1) {
-  top: 4px;
-}
-.toggle-btn span:nth-child(2) {
-  top: 14px;
-}
-.toggle-btn span:nth-child(3) {
-  bottom: 4px;
-}
-.toggle-btn .open .toggle-btn span {
-  background-color: #cc7917;
-}
-.toggle-btn .open .toggle-btn span:nth-child(1) {
-  transform: translateY(10px) rotate(-315deg);
-}
-.toggle-btn .open .toggle-btn span:nth-child(2) {
-  opacity: 0;
-}
-.toggle-btn .open .toggle-btn span:nth-child(3) {
-  transform: translateY(-10px) rotate(315deg);
-}
-
-#mask {
-  display: none;
-  transition: all 0.5s;
-}
-
-.open #mask {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #cc7917;
-  opacity: 0.8;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.hamburger {
-  display: none;
 }
 
 .footer {
