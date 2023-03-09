@@ -146,6 +146,7 @@ li {
   right: 0;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0 0 50% 50%/75% 75% 25% 25%;
 }
 .mainVisual .mainVisual-logo {
   position: absolute;
@@ -221,12 +222,4 @@ li {
   color: #fffaf4;
 }
 
-/*----------------sp----------------*/
-@media screen and (min-width: 600px) {
-  .btn {
-    display: none;
-  }
-  .sp-menu {
-    display: none;
-  }
-}/*# sourceMappingURL=style.css.map */
+/*----------------sp----------------*//*# sourceMappingURL=style.css.map */
