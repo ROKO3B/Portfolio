@@ -54,43 +54,47 @@ li {
     }
   }
 
-  .sp-nav-menu {
-    width: 70%;
-    height: 100vh;
-    margin-left: auto;
-    display: flex;
-    flex-direction: clumn;
-    color: #fffaf4;
-    background-color: #FCAF45;
-    transition: .4s;
-
-    .menu-list {
-      width: 100%;
-      height: 100%;
+  .sp-menu{
+  
+    .sp-nav-menu {
       display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+      flex-direction: column;
+      position: fixed;
+      right: -70%;
+      width: 70%;
+      height: 100vh;
+      color: #fffaf4;
+      background-color: #FCAF45;
+      transition: .4s;
 
-  .sp-nav-menu {
-    position: fixed;
-    right: -70%;
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #fffaf4;
-    background-color: rgba(167, 148, 58, 0.7);
-    transition: .4s;
+      .menu-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          color: #cc7917;
+          cursor: pointer;
+          transition: .3s;
+        }
+      }
+    }
+
+  .sp-nav-menu,
+  .open {
+    position: absolute;
+    right: 0;
   }
+}
 
   .btn {
     position: fixed;
-    top: 32px;
+    top: 28px;
     right: 16px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     z-index: 10;
   
     .btn-line {
@@ -100,23 +104,52 @@ li {
         height: 3px;
         background-color: #fffaf4;
         transition: .2s;
+        border-radius: 4px;
   
       &::before,
       &::after {
         content: "";
         position: absolute;
+        display: block;
         width: 100%;
         height: 100%;
         background-color: #fffaf4;
         transition: .5s;
+        border-radius: 4px;
       }
       &::before {
-        transform: translateY(-16px);
+        transform: translateY(-12px);
       }
       &::after {
-        transform: translateY(16px);
+        transform: translateY(12px);
       }
     }
+
+    .btn-line,
+    .open {
+      background-color: transparent;
+    }
+    .btn-line,
+    .open {
+      &::before,
+      &::after {
+        content: "";
+        background-color: #cc7917;
+        transition: .2s;
+      }
+    }
+    .btn-line,
+    .open {
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+    .btn-line,
+    .open {
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }  
   }
 }
 
@@ -210,5 +243,15 @@ li {
     letter-spacing: .5em;
     font-weight: bold;
     color: #fffaf4;
+  }
+}
+
+/*----------------sp----------------*/
+@media screen and (min-width: 600px) {
+  .btn {
+    display: none;
+  }
+  .sp-menu {
+    display: none;
   }
 }

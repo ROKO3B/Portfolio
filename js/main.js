@@ -1,18 +1,18 @@
+'use strict';
+
 $(function() {
 
+    $('.js-btn').on('click', function () {        
+      $('.sp-nav-menu , .btn-line').toggleClass('open'); 
+    })
 
 
-$('a[href^="#"]').click(function(){
-  // リンクを取得
-  let href= $(this).attr("href");
-  // ジャンプ先のid名をセット
-  let target = $(href == "#" || href == "" ? 'html' : href);
-  // トップからジャンプ先の要素までの距離を取得
-  let position = target.offset().top;
-  // animateでスムーススクロールを行う
-  // 600はスクロール速度で単位はミリ秒
-  $("html, body").animate({scrollTop:position}, 600, "swing");
-  return false;
-});
+  $('a[href^="#"]').click(function(){
+    let href= $(this).attr("href");
+    let target = $(href == "#" || href == "" ? 'html' : href);
+    let position = target.offset().top;
+    $("html, body").animate({scrollTop:position}, 600, "swing");
+    return false;
+  });
 
 });
