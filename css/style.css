@@ -137,14 +137,10 @@ li {
   position: relative;
   top: 0;
   left: 0;
-  overflow: hidden;
   width: 100%;
   height: 100vh;
-  background-color: rgb(248, 247, 247);
-  border-radius: 0 0 60% 60%/80% 80% 40% 40%;
 }
-
-.slider.image {
+.key-visual .slider img {
   width: 100%;
   height: 500px;
   position: absolute;
@@ -154,46 +150,9 @@ li {
   right: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  border-radius: 0 0 60% 60%/80% 80% 40% 40%;
 }
-
-.slider.image:nth-of-type(1) {
-  background-image: url(/img/mainvisual1.png);
-}
-
-.slider.image:nth-of-type(2) {
-  animation-delay: 5s;
-  background-image: url(/img/mainvisual2.png);
-}
-
-.slider.image:nth-of-type(3) {
-  animation-delay: 10s;
-  background-image: url(/img/mainvisual3.png);
-}
-
-.slider.image {
-  animation-name: anime;
-  animation-delay: 0;
-  animation-iteration-count: infinite;
-  animation-duration: 15s;
-}
-
-@keyframes anime {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.18);
-  }
-}
-.key-visual-logo {
+.key-visual .key-visual-logo {
   position: absolute;
   top: 40%;
   left: 0;
@@ -201,6 +160,7 @@ li {
   text-align: center;
   font-size: 45px;
   color: #cc7917;
+  z-index: 10;
 }
 
 #works {

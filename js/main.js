@@ -15,4 +15,11 @@ $(function() {
     return false;
   });
 
+  $('.slider img:nth-child(n+2)').hide();
+      setInterval(function() {
+        $(".slider img:first-child").fadeOut(3000);
+        $(".slider img:nth-child(2)").fadeIn(3000);
+        $(".slider img:first-child").appendTo(".slider");
+      }, 4000);
+  
 });
