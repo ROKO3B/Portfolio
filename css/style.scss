@@ -65,7 +65,8 @@ li {
       height: 100vh;
       color: #fffaf4;
       background-color: #FCAF45;
-      transition: .4s;
+      transition: .5s;
+      padding-top: 50px;
 
       .menu-list {
         display: flex;
@@ -73,6 +74,7 @@ li {
         justify-content: center;
         width: 100%;
         height: 100%;
+        font-size: 18px;
 
         &:hover {
           color: #cc7917;
@@ -82,98 +84,137 @@ li {
       }
     }
 
-  .open {
-    position: absolute;
-    right: 0;
-  }
-  .btn {
-    position: fixed;
-    top: 28px;
-    right: 16px;
-    width: 25px;
-    height: 25px;
-    z-index: 10;
-  
-    .btn-line {
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 3px;
-        background-color: #fffaf4;
-        transition: .2s;
-        border-radius: 4px;
-  
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-color: #fffaf4;
-        transition: .5s;
-        border-radius: 4px;
-      }
-      &::before {
-        transform: translateY(-12px);
-      }
-      &::after {
-        transform: translateY(12px);
-      }
+    .open {
+      position: absolute;
+      right: 0;
     }
+    .btn {
+      position: fixed;
+      top: 20px;
+      right: 16px;
+      width: 25px;
+      height: 25px;
+      z-index: 10;
+    
+      .btn-line {
+          display: block;
+          position: relative;
+          width: 100%;
+          height: 3px;
+          background-color: #fffaf4;
+          transition: .2s;
+          border-radius: 4px;
+    
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: #fffaf4;
+          transition: .5s;
+          border-radius: 4px;
+        }
+        &::before {
+          transform: translateY(-10px);
+        }
+        &::after {
+          transform: translateY(10px);
+        }
+      }
 
-    .btn-line,
-    .open {
-      background-color: transparent;
-    }
-    .btn-line,
-    .open {
-      &::before,
-      &::after {
-        content: "";
-        background-color: #cc7917;
-        transition: .2s;
+      .btn-line.open {
+        background-color: transparent;
       }
-    }
-    .btn-line,
-    .open {
-      &::before {
-        transform: rotate(45deg);
+      .btn-line.open {
+        &::before,
+        &::after {
+          content: "";
+          background-color: #cc7917;
+          transition: .2s;
+        }
       }
-    }
-    .btn-line,
-    .open {
-      &::after {
-        transform: rotate(-45deg);
+      .btn-line.open {
+        &::before {
+          transform: rotate(45deg);
+        }
       }
-    }  
+      .btn-line.open {
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }  
+    }
   }
 }
 
-  
+.key-visual {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(248, 247, 247);
+  border-radius: 0 0 60% 60% / 80% 80% 40% 40% ;
 }
-
-.mainVisual {
-  img {
-    width: 100vw;
+.slider.image {
+    width: 100%;
     height: 500px;
-    position: relative;
+    position: absolute;
+    z-index: 10;
     top: 0;
     left: 0;
     right: 0;
     object-fit: cover;
-    border-radius: 0 0 50% 50% / 75% 75% 25% 25% ;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
   }
-  .mainVisual-logo {
+  .slider.image:nth-of-type(1) {
+      background-image: url(/img/mainvisual1.png);
+    }
+  .slider.image:nth-of-type(2) {
+      animation-delay: 5s;
+      background-image: url(/img/mainvisual2.png);
+    }
+  .slider.image:nth-of-type(3) {
+      animation-delay: 10s;
+      background-image: url(/img/mainvisual3.png);
+    }
+  
+  .slider.image {
+    animation-name: anime;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+  }
+  @keyframes anime {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.18);
+    }
+  }
+
+  .key-visual-logo {
     position: absolute;
-    top: 25%;
+    top: 40%;
     left: 0;
     right: 0;
     text-align: center;
     font-size: 45px;
     color: #cc7917;
   }
-}
+
 
 #works {
   margin-bottom: 100px;
@@ -248,6 +289,25 @@ li {
 }
 
 /*----------------sp----------------*/
-@media screen and (min-width: 600px) {
-  
+@media screen and (max-width: 768px) {
+  .navi-menu {
+    li {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width:769px) {
+  .sp-nav-menu {
+    .menu-list {
+      display: none;
+    }
+  }
+  #header {
+    .sp-menu {
+      .btn {
+        display: none;
+      }
+    }
+  }
 }
