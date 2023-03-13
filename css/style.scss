@@ -219,10 +219,12 @@ li {
       font-weight: bold;
       text-align: center;
       text-decoration: none;
+      cursor: pointer;
+      -webkit-user-select: none;
 
       &:active {
         color: #FCAF45;
-        box-shadow: inset 1px 1px 10px #e9bb70, inset -1px -1px 10px #e9bb70;
+        box-shadow: inset 8px 8px 15px #e9bb70, inset -8px -8px 15px #fffaf4;
       }
     }
     
