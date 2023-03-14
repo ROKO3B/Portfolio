@@ -219,6 +219,7 @@ li {
       border-radius: 20px;
       padding: 20px 10px;
       box-shadow: 10px 10px 10px 3px #e9bb70;
+      opacity: 0;
     }
 
     .btn-neumorphism {
@@ -276,17 +277,45 @@ li {
     }
   }
 }
+.fadeUp {
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 #service {
   .service-item {
     display: flex;
     justify-content: space-between;
+    animation-name:smoothAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    transform-origin:left;
+    opacity:0;
 
     li {
       width: 30%;
       height: auto;
       text-align: center;
       padding-top: 20px;
+      border: 1px solid #FCAF45;
+      border-radius: 20px;
+      padding: 20px 10px;
+      box-shadow: 10px 10px 10px 3px #e9bb70;
     }
   }
   .service-img {
@@ -309,9 +338,19 @@ li {
       font-size: 18px;
       letter-spacing: 0.2em;
     }
+  } 
+}
+
+@keyframes smoothAnime{
+  from {
+  transform:translate3d(0, 100%, 0) skewY(12deg);
+  opacity:0;
   }
 
-  
+  to {
+  transform:translate3d(0, 0, 0) skewY(0);
+  opacity:1;
+  }
 }
 
 #about {
@@ -393,6 +432,7 @@ li {
       max-width: 410px;
       background: #fff;
       font-size: 18px;
+      text-align: left;
     }
 
     .form-item-textarea {
@@ -414,8 +454,7 @@ li {
       margin-top: 32px;
       margin-left: auto;
       margin-right: auto;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 20px 0;
       width: 280px;
       display: block;
       letter-spacing: 0.05em;
@@ -507,6 +546,13 @@ li {
         width: 160px;
         font-size: 16px;
       }
+    }
+  }
+  .footer {
+    p {
+      position: absolute;
+      top: 50%;
+      left: 25%;
     }
   }
 
