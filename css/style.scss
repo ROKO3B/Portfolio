@@ -37,7 +37,7 @@ li {
   color: #cc7917;
   padding-top: 50px;
   border-bottom: solid 3px #dfccbb; 
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
 /*------------header------------*/
@@ -306,6 +306,13 @@ li {
 
 }
 
+#about {
+  .sec-title {
+    p {
+      font-size: 20px;
+    }
+  }
+}
 
 
 .footer {

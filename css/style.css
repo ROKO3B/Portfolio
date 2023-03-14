@@ -41,7 +41,7 @@ li {
   color: #cc7917;
   padding-top: 50px;
   border-bottom: solid 3px #dfccbb;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
 /*------------header------------*/
@@ -266,6 +266,10 @@ li {
 #service .service-text {
   font-size: 18px;
   letter-spacing: 0.1em;
+}
+
+#about .sec-title p {
+  font-size: 20px;
 }
 
 .footer {
