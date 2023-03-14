@@ -2,6 +2,10 @@ html {
   font-size: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-size: 0.9rem;
   line-height: 1.7;
@@ -68,6 +72,9 @@ li {
   color: #fcaf45;
   transition: 0.5s;
 }
+#header .navi {
+  margin-left: auto;
+}
 #header .sp-menu .sp-nav-menu {
   display: flex;
   flex-direction: column;
@@ -97,7 +104,7 @@ li {
   position: absolute;
   right: 0;
 }
-#header .sp-menu .btn {
+#header .btn {
   position: fixed;
   top: 20px;
   right: 16px;
@@ -105,7 +112,7 @@ li {
   height: 25px;
   z-index: 10;
 }
-#header .sp-menu .btn .btn-line {
+#header .btn .btn-line {
   display: block;
   position: relative;
   width: 100%;
@@ -114,7 +121,7 @@ li {
   transition: 0.2s;
   border-radius: 4px;
 }
-#header .sp-menu .btn .btn-line::before, #header .sp-menu .btn .btn-line::after {
+#header .btn .btn-line::before, #header .btn .btn-line::after {
   content: "";
   position: absolute;
   display: block;
@@ -124,24 +131,24 @@ li {
   transition: 0.5s;
   border-radius: 4px;
 }
-#header .sp-menu .btn .btn-line::before {
+#header .btn .btn-line::before {
   transform: translateY(-10px);
 }
-#header .sp-menu .btn .btn-line::after {
+#header .btn .btn-line::after {
   transform: translateY(10px);
 }
-#header .sp-menu .btn .btn-line.open {
+#header .btn .btn-line.open {
   background-color: transparent;
 }
-#header .sp-menu .btn .btn-line.open::before, #header .sp-menu .btn .btn-line.open::after {
+#header .btn .btn-line.open::before, #header .btn .btn-line.open::after {
   content: "";
   background-color: #cc7917;
   transition: 0.2s;
 }
-#header .sp-menu .btn .btn-line.open::before {
+#header .btn .btn-line.open::before {
   transform: rotate(45deg);
 }
-#header .sp-menu .btn .btn-line.open::after {
+#header .btn .btn-line.open::after {
   transform: rotate(-45deg);
 }
 
@@ -239,37 +246,129 @@ li {
   border-radius: 10px;
 }
 
-#service .service-item li {
-  width: 100%;
+#service .service-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 70px;
+  justify-content: space-between;
 }
-#service .service-item li:nth-child(1) {
-  margin-top: 50px;
+#service .service-item li {
+  width: 30%;
+  height: auto;
+  text-align: center;
+  padding-top: 20px;
 }
-#service .service-item .service-img,
-#service .service-item .service-content {
-  width: 50%;
-  box-sizing: border-box;
+#service .service-img img {
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 50px;
 }
-#service .service-item li:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-#service .service-title {
-  font-size: 30px;
-  margin-bottom: 21px;
-  font-weight: bold;
+#service .service-content .service-title {
+  font-size: 24px;
   color: #cc7917;
+  font-weight: 700;
   letter-spacing: 0.15em;
+  margin-bottom: 30px;
 }
-#service .service-text {
+#service .service-content .service-text {
   font-size: 18px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
 #about .sec-title p {
   font-size: 20px;
+}
+
+#contact {
+  height: auto;
+}
+#contact .sec-title {
+  margin-bottom: 60px;
+}
+#contact .sec-title p {
+  font-size: 15px;
+}
+#contact .form {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  max-width: 720px;
+  padding: 40px;
+  background-color: rgba(233, 187, 112, 0.368627451);
+  border-radius: 30px;
+}
+#contact .form .form-item {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+#contact .form .form-item-label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  color: #cc7917;
+}
+#contact .form .form-item-label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+#contact .form .form-item-label-required {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #cc7917;
+  color: #fffaf4;
+  font-size: 14px;
+}
+#contact .form .form-item-input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #fff;
+  font-size: 18px;
+}
+#contact .form .form-item-textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #fff;
+  font-size: 18px;
+}
+#contact .form .form-btn {
+  border-radius: 8px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #cc7917;
+  color: #fffaf4;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .footer {
@@ -294,12 +393,59 @@ li {
   .navi-menu li {
     display: none;
   }
+  #contact .form {
+    margin-top: 40px;
+  }
+  #contact .form .form-item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  #contact .form .form-item-label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+  #contact .form .form-item-label.isMsg {
+    margin-top: 0;
+  }
+  #contact .form .form-item-label-required {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+  #contact .form .form-item-input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+  #contact .form .form-item-textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+  #contact .form .form-btn {
+    margin-top: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 160px;
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 769px) {
   .sp-nav-menu .menu-list {
     display: none;
   }
-  #header .sp-menu .btn {
+  #header .btn {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */
