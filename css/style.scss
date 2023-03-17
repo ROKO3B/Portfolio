@@ -41,6 +41,7 @@ li {
   padding-top: 50px;
   border-bottom: solid 3px #dfccbb; 
   margin: 100px 0;
+  font-family: 'Mulish';
 }
 
 /*------------header------------*/
@@ -59,6 +60,7 @@ li {
     display: flex;
     line-height: 80px;
     color: #cc7917;
+    font-size: 18px;
 
     li {
       margin-left: 30px;
@@ -182,7 +184,7 @@ li {
     height: 100%;
     background-color: #fff;
     opacity: .8;
-    z-index: 10;
+    z-index: 60;
     cursor: pointer;
   }
 
@@ -223,6 +225,10 @@ li {
 
 #works {
   margin-bottom: 100px;
+
+  .sec-title {
+    margin-top: 0;
+  }
 
   .works-list {
     display: grid;
@@ -316,6 +322,10 @@ li {
 
 
 #service {
+  .sec-title {
+    margin-top: 140px;
+  }
+
   .service-item {
     display: flex;
     justify-content: space-between;
@@ -334,29 +344,30 @@ li {
       border-radius: 20px;
       padding: 20px 10px;
       box-shadow: 10px 10px 10px 3px #e9bb70;
-    }
-  }
-  .service-img {
-    img {
-      height: 400px;
-      object-fit: cover;
-      margin-bottom: 50px;
-    }
-  }
-  .service-content {
-    .service-title {
-      font-size: 24px;
-      color:#cc7917;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      margin-bottom: 30px;
-    }
 
-    .service-text {
-      font-size: 18px;
-      letter-spacing: 0.2em;
+      .service-img {
+        img {
+          height: 400px;
+          object-fit: cover;
+          margin-bottom: 50px;
+        }
+      }
+      .service-content {
+        .service-title {
+          font-size: 24px;
+          color:#cc7917;
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          margin-bottom: 30px;
+        }
+    
+        .service-text {
+          font-size: 16px;
+          letter-spacing: 0.1em;
+        }
+      }
     }
-  } 
+  }
 }
 
 @keyframes smoothAnime{
@@ -373,10 +384,38 @@ li {
 
 #about {
   .sec-title {
+    margin-bottom: 0;
+
     p {
       font-size: 20px;
     }
   }
+
+  .about-text {
+    font-size: 20px;
+    text-align: center;
+    color: #cc7917;
+    letter-spacing: 0.15em;
+    margin: 2em auto;
+    padding: 2em;
+    background: none;
+    border: 1px solid #cc7917;
+    position: relative;
+
+    &::after {
+      background-color: #fae5d2;
+      border: none;
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+  }
+  
 }
 
 
@@ -385,7 +424,7 @@ li {
 
   .sec-title {
     margin-bottom: 60px;
-
+    margin-top: 0;
     p {
       font-size: 15px;
     }
@@ -398,7 +437,7 @@ li {
     margin-bottom: 60px;
     max-width: 720px;
     padding: 40px;
-    background-color: #e9bb705e;
+    background-color: #fae5d2;
     border-radius: 30px;
   
     .form-item {
@@ -504,6 +543,7 @@ li {
 
 /*----------------sp----------------*/
 @media screen and (max-width: 768px) {
+ 
   .wrapper {
     padding: 0 10px;
     }
@@ -515,6 +555,7 @@ li {
   }
   .key-visual {
     height: 400px;
+    margin-bottom: 100px;
     .key-visual-logo {
       top: 40%;
     }

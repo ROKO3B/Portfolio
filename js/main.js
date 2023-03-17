@@ -3,7 +3,12 @@
 $(function() {
 
     $('.js-btn').on('click', function () {        
-      $('.sp-nav-menu , .btn-line',).toggleClass('open'); 
+      $('.sp-nav-menu , .btn-line , #mask').toggleClass('open'); 
+    })
+
+    $('#mask').on('click',function () {
+      $('.sp-nav-menu , .btn-line , #mask').
+      removeClass('open');
     })
 
 
