@@ -504,14 +504,19 @@ li {
 
 /*----------------sp----------------*/
 @media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 10px;
+    }
+  
   .navi-menu {
     li {
       display: none;
     }
   }
   .key-visual {
+    height: 400px;
     .key-visual-logo {
-      top: 25%;
+      top: 40%;
     }
   }
 
@@ -519,6 +524,12 @@ li {
     .works-list {
       display: grid;
       grid-template-columns: 1fr;
+    }
+
+    .works-item {
+      img {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -535,6 +546,11 @@ li {
   }
 
   #contact {
+    .sec-title {
+      p {
+        font-size: 12px;
+      }
+    }
     .form {
       margin-top: 40px;
 
@@ -597,6 +613,7 @@ li {
       top: 50%;
       left: 22%;
       font-size: 12px;
+      letter-spacing: 0.15em;
     }
   }
 

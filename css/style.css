@@ -445,15 +445,24 @@ li {
 
 /*----------------sp----------------*/
 @media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 10px;
+  }
   .navi-menu li {
     display: none;
   }
+  .key-visual {
+    height: 400px;
+  }
   .key-visual .key-visual-logo {
-    top: 25%;
+    top: 40%;
   }
   #works .works-list {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  #works .works-item img {
+    margin-bottom: 20px;
   }
   #service .service-item {
     display: flex;
@@ -462,6 +471,9 @@ li {
   #service .service-item li {
     width: 100%;
     margin-bottom: 30px;
+  }
+  #contact .sec-title p {
+    font-size: 12px;
   }
   #contact .form {
     margin-top: 40px;
@@ -518,6 +530,7 @@ li {
     top: 50%;
     left: 22%;
     font-size: 12px;
+    letter-spacing: 0.15em;
   }
 }
 @media screen and (min-width: 769px) {
