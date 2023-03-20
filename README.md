@@ -1,1 +1,5 @@
-https://delicate-marshmallow-88e558.netlify.app/
+https://sneakers-shop-site.netlify.app/
+
+https://coffee-cafe-site.netlify.app/
+
+
