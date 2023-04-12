@@ -310,7 +310,7 @@ li {
   box-shadow: 10px 10px 10px 3px #e9bb70;
 }
 #service .service-item li .service-img img {
-  height: 400px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 50px;
